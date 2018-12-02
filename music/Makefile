@@ -7,3 +7,6 @@ all: $(target)
 %.pdf: %.ly
 	lilypond $^
 
+clean:
+	$(RM) $(rmfiles)
+
