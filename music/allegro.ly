@@ -6,27 +6,23 @@
 }
 
 
-first = \relative c'' {
-\key a \major
-
+first = {
 a'4 a e e
 fis8 gis a fis e4 e
 d d cis cis b8 a b cis a2
-
 }
 
-second = \relative c'' {
-\key a \major
-
-f4 f e a f f e a f g a f e c b2
-
+second = {
+fis'4 fis e a,
+fis' fis e a,
+fis' gis a fis e cis b2
 }
 
 
 
 \score {
-
-{
+\relative c'' {
+\key a \major
 {\first}
 {\first}
 {\second}
