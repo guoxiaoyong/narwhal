@@ -7,6 +7,8 @@
 
 
 \score {
+\new Staff {
+\set Staff.midiInstrument = #"violin"
 
 \relative c'' {
 \key a \major
@@ -30,6 +32,8 @@ fis4 a4 e2
 
 e4 b8 cis d4.-3( gis,8-4)
 a2.-0 r4
+}
+
 }
 
 \layout { }
