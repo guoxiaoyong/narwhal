@@ -1,10 +1,15 @@
 \version "2.18.2"
 
+\paper {
+   indent = 0\cm
+}
+
 \header {
   title = "Farewell Song"
   composer = "John P. Ordway"
 }
 
+#(set-global-staff-size 30)
 
 \score {
 \new Staff {
