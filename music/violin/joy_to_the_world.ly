@@ -6,7 +6,7 @@
 }
 
 \paper {
-  ragged-right = ##t
+  %ragged-right = ##t
   indent = 0\cm
 }
 
@@ -34,9 +34,8 @@ forth = {
   \relative c' {
     \time 4/4
     \first
-    \first
-    \third
-    \forth
+    \relative c' \first
+    \relative c' {\third \forth}
   }
 
   \layout { }
