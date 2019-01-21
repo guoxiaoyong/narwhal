@@ -18,14 +18,23 @@
   mutopiasource =      "Unknown"
   date =               "19th C."
   style =              "Classical"
-  license =            "Public Domain"
-  maintainer =         "Jeff Covey"
-  maintainerEmail =    "jeff.covey@pobox.com"
+  maintainer =         "Xiaoyong Guo"
+  % license =            "Public Domain"
+  % maintainer =         "Jeff Covey"
+  % maintainerEmail =    "jeff.covey@pobox.com"
 
- footer = "Mutopia-2015/08/18-13"
+ footer = "Xiaoyong Guo-2019/01/22"
+ %footer = "Mutopia-2015/08/18-13"
  copyright =  \markup { \override #'(baseline-skip . 0 ) \right-column { \sans \bold \with-url #"http://www.MutopiaProject.org" { \abs-fontsize #9  "Mutopia " \concat { \abs-fontsize #12 \with-color #white \char ##x01C0 \abs-fontsize #9 "Project " } } } \override #'(baseline-skip . 0 ) \center-column { \abs-fontsize #11.9 \with-color #grey \bold { \char ##x01C0 \char ##x01C0 } } \override #'(baseline-skip . 0 ) \column { \abs-fontsize #8 \sans \concat { " Typeset using " \with-url #"http://www.lilypond.org" "LilyPond" " by " \maintainer " " \char ##x2014 " " \footer } \concat { \concat { \abs-fontsize #8 \sans{ " Placed in the " \with-url #"http://creativecommons.org/licenses/publicdomain" "public domain" " by the typesetter " \char ##x2014 " free to distribute, modify, and perform" } } \abs-fontsize #13 \with-color #white \char ##x01C0 } } }
  tagline = ##f
 }
+
+\paper {
+  %ragged-right = ##t
+  indent = 0\cm
+}
+
+
 
 global =  { \time 4/4  \skip 1*43  \bar "|." }
 midiStuff = {
@@ -34,21 +43,23 @@ midiStuff = {
                     % octave lower than written.
 }
 
+#(define RH rightHandFinger)
+
 melody =  \relative c'' {
   \stemUp
 
-   c,8[ c' b a]  g[ f e d]
-   c[ e'd c]  b[ a g f]
-   e[ g' f e]  d[ c b a]
-   g[ fis e d]  c[ b a d]
+   c,8\RH #1 -3[ c'\RH #4 -1 b\RH #3 -0 a\RH #2 -2]  g[ f e d]
+   c\RH #1 -3[ e'\RH #4 d\RH #3 -4 c\RH #2 ]  b[ a g f]
+   e\RH #1 -2[ g'\RH #4 -4 f\RH #3 e\RH #2 ]  d[ c b a]
+   g\RH #2 -0[ fis\RH #3 -4 e\RH #2 d\RH #3 ]  c[ b a d]
   %5
-   g,[ g' fis e]  d[ c b a]
-   g[ b' a g]  fis[ e d c]
-   b[ d' c b]  a[ g f e]
-   d[ c b a]  g[ f' e d]
+   g,\RH #1 -3[ g'\RH #4  fis\RH #3 -4 e\RH #2 ]  d[ c b a]
+   g\RH #1 [ b'\RH #4 a\RH #3 g\RH #2 ]  fis[ e d c]
+   b\RH #1 -2[ d'\RH #4 -4 c\RH #3 b\RH #2 ]  a[ g f e]
+   d[ c b a ]  g\RH #1 -3[ f'\RH #4 -4 e\RH #3 d\RH #2 ]
   %9
-   c[ c' d e]  f[ g a b]
-   c[ b a g]  f[ e d c]
+   c-3[ c'-1 d-4 e-0]  f\2-2[ g-4 a-1 b-3]
+   c-4[ b-3 a-1 g-4]  f-2[ e-0 d-3 c-1]
   b r8 r4 r2
   \skip 1*1
   %13
