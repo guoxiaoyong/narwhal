@@ -167,6 +167,7 @@ bass =  \relative c' {
         line-width = 18.0 \cm
   }
 }
+
 \score {
       \context Staff = "guitar" <<
         \midiStuff
@@ -178,6 +179,4 @@ bass =  \relative c' {
   \midi {
     \tempo 4 = 160
     }
-
-
 }
