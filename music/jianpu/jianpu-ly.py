@@ -142,7 +142,7 @@ def jianpu_staff_start(voiceName="jianpu"):
     { """+jianpu_voice_start(voiceName)+r"""
     \override Staff.TimeSignature #'style = #'numbered
     \override Staff.Stem #'transparent = ##t
-    
+
     \set Voice.chordChanges = ##t
     % This is to work around a bug in LilyPond 2.19.82.
     % \applyOutput docs say "called for every layout object
@@ -160,7 +160,7 @@ def jianpu_staff_start(voiceName="jianpu"):
     % don't use, and if someone adds a chord-mode staff then
     % it won't print noteheads anyway): we will substitute
     % jianpu numbers for noteheads only if chordChanges = #t.
-    
+
     """
 def jianpu_staff_end(): return "} }\n% === END JIANPU STAFF ===\n" # \bar "|." is added separately if there's not a DC etc
 def midi_staff_start(voiceName="midi"):

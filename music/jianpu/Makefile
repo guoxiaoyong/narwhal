@@ -1,4 +1,10 @@
-rikaze.pdf: rikaze.txt
-	python jianpu-ly.py < rikaze.txt > rikaze.ly
-	lilypond rikaze.ly
-	timidity -Ow -o rikaze.wav rikaze.midi
+all : rikaze.wav doraemon.wav boji.wav
+
+%.ly : %.jp
+	python jianpu-ly.py < $^ > $@
+
+%.wav : %.midi
+	timidity -Ow -o $@ $^
+
+%.pdf %.midi: %.ly
+	lilypond $^
