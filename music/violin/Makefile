@@ -1,11 +1,15 @@
 useful := $(wildcard *.ly) Makefile
 target := $(patsubst %.ly,%.pdf,$(useful))
+target_wav := $(patsubst %.ly,%.wav,$(useful))
 rmfiles := $(filter-out $(useful),$(wildcard *))
 
-all: $(target)
+all: $(target) $(target_wav)
 
-%.pdf: %.ly
+%.pdf %.midi: %.ly
 	lilypond $^
+
+%.wav: %.midi
+	timidity -Ow -o $@ $^
 
 clean:
 	$(RM) $(rmfiles)
