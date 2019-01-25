@@ -1,5 +1,3 @@
-#!/usr/bin/env python2
-
 # Jianpu (numbered musical notaion) for Lilypond
 # v1.157 (c) 2012-2018 Silas S. Brown
 
@@ -54,10 +52,11 @@ Other 1-word Lilypond \ commands: \fermata \> \! \( \) etc
 Other Lilypond code: LP: (block of code) :LP (each delimeter at start of its line)
 """
 
-import sys,os,re,string
-if not sys.version_info[0]==2:
-    sys.stderr.write("Sorry, jianpu-ly cannot run on Python "+repr(sys.version_info[0])+"\nPlease use Python 2.x\n")
-    sys.exit(1)
+import sys
+import os
+import re
+import string
+
 
 def all_scores_start(staff_size = 20):
     # staff_size is the 5-line size in points; jianpu is smaller
@@ -393,15 +392,15 @@ if "--html" in sys.argv:
         if ":" in line and line.split(":",1)[1].strip():
             toGet,shouldType = line.split(":",1)
             if not inTable:
-                print "<table border>" # "<tr><th>To get:</th><th>Type:</th></tr>"
+                print("<table border>") # "<tr><th>To get:</th><th>Type:</th></tr>"
                 inTable = 1
-            print "<tr><td>"+toGet.strip()+"</td><td><kbd>"+shouldType.strip()+"</kbd></td>"
+            print("<tr><td>"+toGet.strip()+"</td><td><kbd>"+shouldType.strip()+"</kbd></td>")
         else:
-            if inTable: print "</table>"
-            elif not justStarted: print "<br>"
+            if inTable: print("</table>")
+            elif not justStarted: print("<br>")
             inTable=justStarted=0
-            print htmlify(line)
-    if inTable: print "</table>"
+            print(htmlify(line))
+    if inTable: print("</table>")
     raise SystemExit
 inDat = []
 for f in sys.argv[1:]:
@@ -414,20 +413,25 @@ if not inDat:
     inDat=[sys.stdin.read()]
 
 def fix_fullwidth(t):
-    utext = t.decode('utf-8')
+    #utext = t.decode('utf-8')
+    utext = t
     r = []
     for c in utext:
-        if 0xff01<=ord(c)<=0xff5e: r.append(unichr(ord(c)-0xfee0))
-        elif c==unichr(0x201a): r.append(",") # sometimes used as comma (incorrectly)
-        elif c==unichr(0xff61): r.append(".")
-        else: r.append(c)
+        if 0xff01<=ord(c)<=0xff5e:
+          r.append(chr(ord(c)-0xfee0))
+        elif c==chr(0x201a):
+          r.append(",") # sometimes used as comma (incorrectly)
+        elif c==chr(0xff61):
+          r.append(".")
+        else:
+          r.append(c)
     return u"".join(r).encode('utf-8')
 
 def intor0(w):
     try: return int(w)
     except: return 0
 
-for i in xrange(len(inDat)):
+for i in range(len(inDat)):
     if inDat[i].startswith('\xef\xbb\xbf'):
         inDat[i] = inDat[i][3:]
     if inDat[i].startswith(r'\version'): errExit("jianpu-ly does not READ Lilypond code.\nPlease see the instructions.")
@@ -435,10 +439,14 @@ for i in xrange(len(inDat)):
 inDat = " NextScore ".join(inDat)
 
 def getLY(score):
-   lyrics = "" ; headers = {}
+   lyrics = ""
+   headers = {}
    notehead_markup.initOneScore()
-   out = [] ; maxBeams = 0 ; need_final_barline = 0
-   repeatStack = [] ; lastPtr = 0
+   out = []
+   maxBeams = 0
+   need_final_barline = 0
+   repeatStack = []
+   lastPtr = 0
    escaping = inTranspose = 0
    for line in score.split("\n"):
     line = fix_fullwidth(line).strip()
@@ -592,7 +600,7 @@ def getLY(score):
        out = out.replace(r"\new RhythmicStaff \with {",r"\new RhythmicStaff \with { \override VerticalAxisGroup.default-staff-staff-spacing = #'((basic-distance . 6) (minimum-distance . 6) (stretchability . 0)) ") # don't let it hang too far up in the air
    return out,maxBeams,lyrics,headers
 
-print all_scores_start() ; scoreNo = 0 # incr'd to 1 below
+print(all_scores_start()) ; scoreNo = 0 # incr'd to 1 below
 western = False
 for score in re.split(r"\sNextScore\s"," "+inDat+" "):
   if not score.strip(): continue
@@ -600,14 +608,16 @@ for score in re.split(r"\sNextScore\s"," "+inDat+" "):
   wordSet = set(score.split())
   has_lyrics = "L:" in wordSet or "H:" in wordSet # the occasional false positive doesn't matter: has_lyrics==False is only an optimisation
   for midi in [0,1]:
-   print score_start()
+   print(score_start())
    out,maxBeams,lyrics,headers = getLY(score)
    if midi:
-       print midi_staff_start(),out,midi_staff_end()
+       print(midi_staff_start(),out,midi_staff_end())
    else:
-       print jianpu_staff_start(),out,jianpu_staff_end()
+       print(jianpu_staff_start(), out, jianpu_staff_end())
        if notehead_markup.withStaff:
-           western=True ; print western_staff_start(),getLY(score)[0],western_staff_end() ; western = False
+           western=True
+           print(western_staff_start(), getLY(score)[0], western_staff_end())
+           western = False
            lyrics = lyrics.replace(r'\lyricsto "jianpu"',r'\lyricsto "5line"')
-       if lyrics: print lyrics
-   print score_end(**headers)
+       if lyrics: print(lyrics)
+   print(score_end(**headers))
