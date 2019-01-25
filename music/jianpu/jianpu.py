@@ -425,7 +425,7 @@ def fix_fullwidth(t):
           r.append(".")
         else:
           r.append(c)
-    return u"".join(r).encode('utf-8')
+    return "".join(r)
 
 def intor0(w):
     try: return int(w)
