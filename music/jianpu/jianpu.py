@@ -162,11 +162,16 @@ def jianpu_staff_start(voiceName="jianpu"):
 
     """
 def jianpu_staff_end(): return "} }\n% === END JIANPU STAFF ===\n" # \bar "|." is added separately if there's not a DC etc
+
 def midi_staff_start(voiceName="midi"):
     return r"""
 %% === BEGIN MIDI STAFF ===
     \new Staff { \new Voice="%s" {""" % (voiceName,)
+
+
 def midi_staff_end(): return "} }\n% === END MIDI STAFF ===\n"
+
+
 def western_staff_start(voiceName="5line"):
     return r"""
 %% === BEGIN 5-LINE STAFF ===
@@ -175,12 +180,15 @@ def western_staff_start(voiceName="5line"):
     \override Staff.TimeSignature #'style = #'numbered
     \set Voice.chordChanges = ##f %% for 2.19.82 bug workaround
 """ % (voiceName,)
+
+
 def western_staff_end(): return "} }\n% === END 5-LINE STAFF ===\n"
 
 lyricsPtr = 0
 def lyrics_start(voiceName="jianpu"):
     global lyricsPtr ; lyricsPtr += 1 # TODO: encapsulate
     return r'\new Lyrics = "I%s" { \lyricsto "%s" { ' % (str(lyricsPtr).translate((string.letters*5)[:256]),voiceName)
+
 def lyrics_end(): return "} }"
 
 dashes_as_ties = True # Implement dash (-) continuations as invisible ties rather than rests; sometimes works better in awkward beaming situations
@@ -600,7 +608,8 @@ def getLY(score):
        out = out.replace(r"\new RhythmicStaff \with {",r"\new RhythmicStaff \with { \override VerticalAxisGroup.default-staff-staff-spacing = #'((basic-distance . 6) (minimum-distance . 6) (stretchability . 0)) ") # don't let it hang too far up in the air
    return out,maxBeams,lyrics,headers
 
-print(all_scores_start()) ; scoreNo = 0 # incr'd to 1 below
+print(all_scores_start())
+scoreNo = 0 # incr'd to 1 below
 western = False
 for score in re.split(r"\sNextScore\s"," "+inDat+" "):
   if not score.strip(): continue
