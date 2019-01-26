@@ -17,7 +17,10 @@ def main():
   }
   auth = RouterAuth()
   resp = requests.get(URL, cookies=cookie, auth=auth)
-  print(resp)
+  if resp.status_code == 200:
+    print('Reset done! Please wait 1 minute until router is restarted.')
+  else:
+    print('Something wrong: %s' % resp.status_code)
 
 if __name__ == '__main__':
   main()
