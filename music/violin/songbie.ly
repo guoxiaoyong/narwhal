@@ -5,8 +5,9 @@
 }
 
 \header {
-  title = "Farewell Song"
-  composer = "John P. Ordway"
+  title = "送别 (Farewell Song)"
+  composer = "作曲: John P. Ordway, 作词: 李叔同"
+  tagline = ""
 }
 
 #(set-global-staff-size 30)

@@ -7,8 +7,9 @@
 #(set-global-staff-size 30)
 
 \header {
-  title = "Doraemon"
+  title = "ドラエモン"
   composer = "Doraemon"
+  tagline=""
 }
 
 \score {
