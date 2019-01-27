@@ -1,0 +1,15 @@
+\documentclass{article}
+
+\begin{document}
+\lilypondfile[noindent]{allegro.ly}
+\lilypondfile[noindent]{cuxin.ly}
+\lilypondfile[noindent]{doraemon.ly}
+\lilypondfile[noindent]{fenshuajiang.ly}
+\lilypondfile[noindent]{huanlesong.ly}
+\lilypondfile[noindent]{joy_to_the_world.ly}
+\lilypondfile[noindent]{lightly_row.ly}
+\lilypondfile[noindent]{long_long_ago.ly}
+\lilypondfile[noindent]{perpetual_motion_in_a_major.ly}
+\lilypondfile[noindent]{songbie.ly}
+\lilypondfile[noindent]{youyi.ly}
+\end{document}
