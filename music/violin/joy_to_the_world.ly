@@ -3,10 +3,10 @@
 \header {
   title = "Joy To The World"
   composer = "Georg Friedrich Händel"
+  tagline=""
 }
 
 \paper {
-  %ragged-right = ##t
   indent = 0\cm
 }
 
@@ -44,6 +44,3 @@ forth = {
     \tempo 4 = 72
   }
 }
-
-
-

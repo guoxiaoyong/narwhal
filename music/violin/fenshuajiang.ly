@@ -9,6 +9,7 @@
 \header {
   title = "粉刷匠"
   composer = "波兰民歌"
+  tagline=""
 }
 
 \score {

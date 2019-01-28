@@ -5,8 +5,8 @@
 }
 
 \header {
-  title = "送别 (Farewell Song)"
-  composer = "作曲: John P. Ordway, 作词: 李叔同"
+  title = "Dreaming of Home and Mother"
+  composer = "John P. Ordway"
   tagline = ""
 }
 

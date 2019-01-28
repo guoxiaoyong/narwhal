@@ -9,6 +9,7 @@
 \header {
   title = "粗心的小画家"
   composer = "中国儿歌"
+  tagline=""
 }
 
 \score {

@@ -8,7 +8,7 @@
 
 
 \header{
-  title="欢乐颂"
+  title="Ode to Joy (Symphony No. 9)"
   composer="Ludwig van Beethoven"
   tagline=""
 }

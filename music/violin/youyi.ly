@@ -5,8 +5,8 @@
 }
 
 \header {
-  title = "友谊地久天长"
-  composer = "民歌"
+  title = "Auld Lang Syne"
+  composer = "Robert Burns (Written in 1788)"
   tagline=""
 }
 

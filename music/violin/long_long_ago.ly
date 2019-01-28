@@ -1,10 +1,16 @@
 \version "2.18.2"
 
+\paper {
+   indent = 0\cm
+}
+
+#(set-global-staff-size 30)
+
 \header {
   title = "Long, Long Ago"
   composer = "Thomas Haynes Bayly"
+  tagline = ""
 }
-
 
 \score {
 
