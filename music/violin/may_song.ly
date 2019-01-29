@@ -32,9 +32,11 @@ cis4 e8 cis b2
 
 \relative c'' {
 \key a \major \time 4/4
-{\first}
-{\second}
-{\first}
+\repeat volta 2 {
+  {\first}
+  {\second}
+  {\first}
+}
 }
 }
 
