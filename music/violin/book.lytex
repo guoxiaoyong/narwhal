@@ -1,8 +1,8 @@
-\documentclass[a4paper]{article}
+\documentclass[20pt, a4paper]{article}
 \usepackage[UTF8]{ctex}
 \usepackage[top=2cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
 
-\title{郭安琪小提琴练习曲}
+\title{\bf 郭安琪小提琴练习曲}
 \begin{document}
 \maketitle
 
