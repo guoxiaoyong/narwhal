@@ -15,22 +15,46 @@
 \section{很久很久以前}
 \lilypondfile[noindent]{long_long_ago.ly}
 
+\section{五月之歌}
+\lilypondfile[noindent]{may_song.ly}
+
+\section{风之歌}
+\lilypondfile[noindent]{song_of_the_wind.ly}
+
+\section{告诉罗蒂阿姨}
+\lilypondfile[noindent]{go_tell_aunt_rhody.ly}
+
+\section{来吧，小伙伴}
+\lilypondfile[noindent]{come_little_children.ly}
+
 \section{送别}
 \lilypondfile[noindent]{songbie.ly}
+
 
 \section{A大调无穷动}
 \lilypondfile[noindent]{perpetual_motion_in_a_major.ly}
 
 
+\section{粗心的小画家}
 \lilypondfile[noindent]{cuxin.ly}
 
+
+\section{多啦A梦}
 \lilypondfile[noindent]{doraemon.ly}
 
+
+\section{我是一个粉刷匠}
 \lilypondfile[noindent]{fenshuajiang.ly}
 
+
+\section{欢乐颂}
 \lilypondfile[noindent]{ode_to_joy.ly}
 
+
+\section{Joy to the World}
 \lilypondfile[noindent]{joy_to_the_world.ly}
 
+
+\section{友谊地久天长}
 \lilypondfile[noindent]{youyi.ly}
 \end{document}
