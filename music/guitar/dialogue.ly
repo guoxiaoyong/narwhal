@@ -96,7 +96,7 @@ a1
 \set Staff.midiInstrument = "acoustic guitar (nylon)"
 <<
 \context Voice = "melody" {\melody}
-\context Voice = "base"  {\bass}
+\context Voice = "bass"  {\bass}
 >>
 }
 
