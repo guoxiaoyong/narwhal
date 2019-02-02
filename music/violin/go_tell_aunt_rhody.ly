@@ -22,9 +22,9 @@ cis4 cis8 b a4 a
 b4 b cis8 b a4
 e'4 e8 d cis4 cis
 b8 a b cis a2
-cis4 cis8 b e4 e
+cis4 cis8 d e4 e
 fis4 fis e8 d cis4
-cis4 cis8 b e4 e
+cis4 cis8 d e4 e
 fis4 fis e2
 cis4 cis8 b a4 a
 b4 b cis8 b a4
