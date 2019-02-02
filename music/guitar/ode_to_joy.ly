@@ -19,7 +19,8 @@
 melody = \transpose c c' {
      \key c \major  \time 4/4
      \stemUp
-     e'4 \RH 3 - 0 e'4 \RH 2  f'4 \RH 3 - 1g'4 \RH 2 - 4 |
+     \mark "Allegretto"
+     e'4^\mf \RH 3 - 0 e'4 \RH 2  f'4 \RH 3 - 1g'4 \RH 2 - 4 |
      g'4 f'4 e'4 d'4 |
      c'4 c'4 d'4 e'4 |
      e'4. d'8 d'2 |
@@ -27,13 +28,13 @@ melody = \transpose c c' {
      g'4 f'4 e'4 d'4 |
      c'4 c'4 d'4 e'4 |
      d'4. c'8 c'2 |
-     d'4 d'4 e'4 c'4 |
+     d'4^\f d'4 e'4 c'4 |
      d'4 e'8 f'8 e'4 c'4 |
      d'4 e'8 f'8 e'4 d'4 |
-     c'4 d'4 g4 e'4 |
-     e'2 f'4 g'4 |
+     c'4^\ff d'4 g4 e'4 |
+     e'2^\f f'4 g'4 |
      g'4 f'4 e'4 d'4 |
-     c'4 c'4 d'4 e'4 |
+     c'4^\mf c'4 d'4 e'4 |
      d'4. c'8 c'2
 }
 
