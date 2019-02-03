@@ -28,7 +28,7 @@ class Pitch(object):
     self._midi_number = midi_number
 
   @property
-  def mini_number(self):
+  def midi_number(self):
     return self._midi_number
 
   @property
@@ -43,7 +43,10 @@ class Pitch(object):
   def __add__(self, n):
     return type(self)(self._midi_number + n)
 
+  def __str__(self):
+    return '%s[%s]' % (self.note, self.midi_number)
+
 p = Pitch(0)
 for n in range(12):
-  p += n*7
-  print(p.note)
+  x = p + (n*7)
+  print(x.note)

@@ -57,6 +57,9 @@
 \lilypondfile[noindent]{joy_to_the_world.ly}
 
 
+\section{玛丽有只小羊羔}
+\lilypondfile[noindent]{mary_had_a_little_lamb.ly}
+
 \section{友谊地久天长}
 \lilypondfile[noindent]{youyi.ly}
 \end{document}

@@ -31,11 +31,13 @@ forth = {
 
 
 \score {
+  \transpose c a {
   \relative c' {
-    \time 4/4
+    \key c \major \time 4/4
     \first
     \relative c' \first
     \relative c' {\third \forth}
+  }
   }
 
   \layout { }
