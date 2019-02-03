@@ -56,6 +56,8 @@
 \section{Joy to the World}
 \lilypondfile[noindent]{joy_to_the_world.ly}
 
+\section{两只老虎}
+\lilypondfile[noindent]{two_tigers.ly}
 
 \section{玛丽有只小羊羔}
 \lilypondfile[noindent]{mary_had_a_little_lamb.ly}
