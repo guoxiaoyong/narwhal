@@ -13,10 +13,10 @@
 #(set-global-staff-size 30)
 
 first = {
-  c'4 b8. a16 g4. f8
-  e4 d4 c4. g'8
-  a4. a8 b4. b8
-  c2. r8 c8
+  c'4^"C'" b8.^"B" a16^"A" g4.^"G" f8^"F"
+  e4^"E" d4^"D" c4.^"C" g'8^"G"
+  a4.^"A" a8^"A" b4.^"B" b8^"B"
+  c2.^"C'" r8 c8^"C'"
 }
 
 third = {
@@ -31,7 +31,7 @@ forth = {
 
 
 \score {
-  \transpose c a {
+  \transpose c c {
   \relative c' {
     \key c \major \time 4/4
     \first
