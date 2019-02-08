@@ -1,3 +1,5 @@
+import sys
+
 def get_note(index):
   m = index % 12
   flat = '♭'
@@ -46,7 +48,26 @@ class Pitch(object):
   def __str__(self):
     return '%s[%s]' % (self.note, self.midi_number)
 
-p = Pitch(0)
-for n in range(12):
-  x = p + (n*7)
-  print(x.note)
+
+def fifth_circle():
+  p = Pitch(0)
+  for n in range(12):
+    x = p + (n*7)
+    print(x.note)
+
+
+def major_scale(n):
+  p = Pitch(n)
+  print(p)
+  intervals = [2, 2, 1, 2, 2, 2, 1]
+  for s in intervals:
+    p += s
+    print(p)
+
+
+def main(argv):
+  major_scale(int(argv[1]))
+
+
+if __name__ == '__main__':
+  main(sys.argv)
