@@ -25,18 +25,49 @@ melody = \relative c'' {
      g,4 bes a c f, a g8 c bes g f4 r4
 }
 
+rst = \absolute {b'8\rest} 
+
 melodytwo = \relative c' {
      \key f \major  \time 2/4
-     r8 f8 a f
-     r8 f8 a f
-     r8 d8 bes' d,
-     r8 e8 g e
+     \rst f8[ a f]
+     \rst f8[ a f]
+     \rst d8[ bes' d,]
+     \rst e8[ g e]
+     \rst f8[ a f]
+     \rst f8[ a f]
+     \rst e8[ g e]
+     s4 <c f a>
+
+     \rst e8[ g e]
+     \rst e8[ g e]
+     \rst f8[ a f]
+     \rst f8[ a f]
+     \rst g8[ b g]
+     \rst g8[ b g]
+     e8[ c e c]
+     f8[ c g' c,]
+     \rst f8[ a f]
+     \rst f8[ a f]
+     \rst d8[ bes' d,]
+     \rst e8[ g e]
+     \rst f8[ a f]
+     \rst f8[ a f]
+     \rst e8[ g e]
+     s4 <c f a>
 }
+
+
 
 bass = \relative c {
   \key f \major  \time 2/4
   \stemDown
   f2 d'2 g,2 c2
+  f,2 c' c f,
+  c' c c c d f
+  s2
+  s2
+  f, d' g,
+  c f, c' c f,
 }
 
 
