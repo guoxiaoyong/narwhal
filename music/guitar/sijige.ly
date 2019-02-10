@@ -48,7 +48,7 @@ bass = \transpose c c {
 \score {
 <<
 \new Staff {
-\set Staff.midiInstrument = "acoustic guitar (nylon)"
+\set Staff.midiInstrument = "recorder"
 \context Voice = "melody" {\melody} }
 \new Staff {
 \set Staff.midiInstrument = "acoustic guitar (nylon)"
