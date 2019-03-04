@@ -18,3 +18,14 @@ print("nSamplePerSec: ", struct.unpack('@i', content[16:20]))
 print("nAvgBytesPerSec: ", struct.unpack('@i', content[20:24]))
 print("nBlockAlign: ", struct.unpack('@h', content[24:26]))
 print("wBitsPerSample: ", struct.unpack('@h', content[26:28]))
+
+print("==================")
+data = content[28:]
+print(data[:4])
+print(struct.unpack("@i", data[4:8]))
+samples = data[8:]
+
+print(len(samples))
+for n in range(0, len(samples), 2):
+  s = struct.unpack("@h", samples[n:n+2])[0]
+  print(s)

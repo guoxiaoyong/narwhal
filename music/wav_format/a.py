@@ -22,9 +22,9 @@ def read_wave_data(file_path):
   wave_data = np.fromstring(str_data, dtype = np.short)
   #for the data is stereo,and format is LRLRLR...
   #shape the array to n*2(-1 means fit the y coordinate)
-  wave_data.shape = -1, 2
+  #wave_data.shape = -1, 2
   #transpose the data
-  wave_data = wave_data.T
+  #wave_data = wave_data.T
   #calculate the time bar
   time = np.arange(0, nframes) * (1.0/framerate)
   return wave_data, time
@@ -32,10 +32,10 @@ def read_wave_data(file_path):
 def main():
   wave_data, time = read_wave_data(sys.argv[1])
   #draw the wave
-  plt.subplot(211)
-  plt.plot(time, wave_data[0])
-  plt.subplot(212)
-  plt.plot(time, wave_data[1], c="g")
+  #plt.subplot(211)
+  plt.plot(time, wave_data)
+  #plt.subplot(212)
+  #plt.plot(time, wave_data[1], c="g")
   plt.show()
 
 if __name__ == "__main__":
